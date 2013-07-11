@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Hello!</title>
+    <link href="css/bootstrap.css" rel="sytlesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/DT_bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.responsive.css" rel="stylesheet">
+    <link href="css/bootstrap.responsive.min.css" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+    <div class="conatiner">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <a class="brand" href="#">Medienbibliothek</a>
+                        <ul class="nav">
+                        <li><a href="#">Home</a></li>
+                        <li class="active"><a href="#">CD Ausgabe</a></li>
+                        <li><a href="#">CD Eingabe</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+<table class ="table" id="media">
+    <thead>
+        <tr>
+            <th>Interpret</th>
+            <th>CD Titel</th>
+        </tr>
+    </thead>
+    {% for item in media %}
+        <tr class="info">
+            <td>{{item.creator}}</td>
+            <td>{{item.title}}</td>
+        </tr>{% endfor %}
+</table>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<!--<script src="js/DT_bootstrap.js"></scrip>-->
+<script>
+    $(document).ready(function(){
+    $('#media').dataTable();
+    });
+</script>
+</body>
+
+</html>
