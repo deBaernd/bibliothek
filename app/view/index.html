@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/DT_bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap.responsive.min.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table class ="table" id="media">
+<thead>
+<tr>
+<th>Interpret</th>
+<th>CD Titel</th>
+</tr>
+</thead>
+{% for item in media %}
+<tr class="info">
+<td>{{item.creator}}</td>
+<td>{{item.title}}</td>
+</tr>{% endfor %}
+</table>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<!--<script src="js/DT_bootstrap.js"></scrip>-->
+<script> 
+$(document).ready(function(){
+$('#media').dataTable();
+});
+</script>
+</body>
+</html>
